@@ -1,3 +1,15 @@
+body{
+    font-family: 'Kanit', sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.inner_left_bar{
+    margin: 5px;
+}
+
 .login{
     align-content: center;
     border: 2px solid red;
@@ -30,7 +42,7 @@
     color: #FFFFFF;
 }
 .menu{
-    min-height: 1000px;
+    min-height: 800px;
     background-color: #FFFFFF;
 }
 
@@ -41,15 +53,24 @@
 
 .menubutton{
     width: 100%;
-    margin: auto;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .contentbox{
-    min-height: 500px;
+    min-height: 300px;
 }
 
-.headbc{
+.bc{
     background-color: #F6D9F8;
+}
+
+.idblock{
+    text-align: center;
+}
+
+.datashow{
+    border:#000000;
 }
 
 #loginpanel{
@@ -70,5 +91,38 @@
 }
 
 #headerbot{
-    background-color: #FFFFFF;
+    color: #000000;
+}
+
+th{
+    padding: 10px;
+}
+
+.headtable{
+    color: #2600ff;
+    font-size: large;
+}
+
+.hwbox{
+    background-color: #333;
+    width: auto;
+    height: auto;
+    color: aqua;
+    text-align: left;
+    border: 2px solid magenta;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.infor{
+    margin: auto;
+    padding: 10px;
+}
+
+.space{
+    margin: 10px;
+}
+
+.correct{
+    align-content: center;
 }
