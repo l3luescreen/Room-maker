@@ -62,7 +62,7 @@
             <hr>
             <a href="\template\score.php" class="inner_left_bar btn btn-secondary menubutton">คะเเนน</a>
             <hr>    
-            <button type="button" class="inner_left_bar btn btn-secondary menubutton" data-toggle="modal" data-target="#exampleModalCenter">เพิ่มข้อมูล</button>
+            <button type="button" class="inner_left_bar btn btn-secondary menubutton" data-toggle="modal" data-target="#homeworkmodal">เพิ่มข้อมูล</button>
             <hr>
             <button type="button" class="btn btn-secondary menubutton">ค้นหา</button>
             <hr>
@@ -111,7 +111,7 @@
     </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="homeworkmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -121,29 +121,25 @@
         </button>
       </div>
       <div class="modal-body">
-      <form action="main.php" method="post">
+      <form action="adddata.php" method="post" action="main.php">
         ชื่อวิชา <br>
         <input class="form-control" type="text" placeholder="วิชา" name="subname">
-        <label class="mr-sm-2" for="inlineFormCustomSelect">ประเภท</label>
-        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-        <option selected>Choose...</option>
-        <option value="1">ใบความรู้</option>
-        <option value="2">การบ้าน</option>
-      </select>
+        ประเภท <br>
+        <input class="form-control" type="text" placeholder="งานกลุ่ม, ใบงาน, การบ้าน, ใบความรู้" name="type">
         คะเเนน <br>
-        <input class="form-control" type="text" placeholder="คะเเนน">
+        <input class="form-control" type="text" placeholder="คะเเนน" name="score">
         คำอธิบาย <br>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="text"></textarea>
         <div class="form-group">
-        <label for="exampleFormControlFile1">ไฟล์งาน</label>
-        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        <label for="exampleFormControlFile1" name="file">ลิ้งค์เพิ่มเติม</label>
+        <input class="form-control" type="text" placeholder="ลิ้งค์ไฟล์ หรือ เเหล่งอ้างอิงอื่นๆ" name="reference">
         </div>
-        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-        <button type="button" class="btn btn-primary">เพิ่มการบ้าน</button>
+        <button type="submit" class="btn btn-primary">เพิ่มการบ้าน</button>
       </div>
+      </form>
     </div>
   </div>
 

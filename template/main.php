@@ -17,7 +17,9 @@
 
 <body>
 
-    <!--Header-->
+    <!--Header
+        ส่วน bar ที่อยู่ส้วนหัวของเว็ปไซต์ 
+    -->
     <div class="container-fluid">
         <div class="row" id="header">
             <div class="col-3 bc">
@@ -43,7 +45,10 @@
         </div>
     </div>
 
-    <!--Left bar-->
+    <!--
+        Left bar
+        บาร์ทางซ้ายซึ่งจะมีปุ่มอยู่ 5 ปุ่ม
+    -->
     <div class="row page menu">
         <div class="col-2 page">
             <h2>Welcome</h2>
@@ -53,18 +58,23 @@
             ?>
             </div>
             <hr>
+            <!--ปุ่มหน้าหลัก-->
             <a href="\template\main.php" class="inner_left_bar btn btn-secondary menubutton">Home</a>
             <hr>
+            <!--ปุ่ม เเสดงสมาชิกคนในห้อง-->
             <a href="\template\member.php" class="inner_left_bar btn btn-secondary menubutton">สมาชิกในห้องของคุณ</a>
             <hr>
+            <!--ปุ่ม เเสดงตารางสอน-->
             <a href="\template\tarang.php" class="inner_left_bar btn btn-secondary menubutton">ตารางสอนของคุณ</a>
-            <hr>    
-            <button type="button" class="inner_left_bar btn btn-secondary menubutton" data-toggle="modal" data-target="#exampleModalCenter">เพิ่มข้อมูล</button>
             <hr>
-            <button type="button" class="btn btn-secondary menubutton">ติดต่ออาจารย์</button>
+            <!--ปุ่ม กดเพิ่อเพิ่มข้อมูลต่างๆเช่น การบ้าน ประกาศต่างๆ-->
+            <button type="button" class="inner_left_bar btn btn-secondary menubutton" data-toggle="modal" data-target="#homeworkmodal">เพิ่มข้อมูล</button>
+            <hr>
+            <!--ปุ่ม เเสดงรายชื่อของอาจาร์ย วิชาที่สอน เเละเบอร์โทรศัพท์ด้วย-->
+            <a href="\template\teacher.php"><button type="button" class="btn btn-secondary menubutton">ติดต่ออาจารย์</button></a>
         </div>
 
-
+        <!--ส่วนของเนื้อหาภายในเว็บไซต์-->
         <div class="col" id="blankp">
             <div class="container contentbox" id="headertop">
                 <div class="col">    
@@ -80,6 +90,10 @@
                                     mysqli_query($con, "SET NAMES 'utf8' ");
                                     $result=mysqli_query($con, $sql);
                                     $lshomework= mysqli_fetch_array($result, MYSQLI_NUM);
+
+                                    /*
+                                        วนลูปเพิ่มดึงข้อมูลของการบ้านหรือข้อมูลที่อาจาร์ยเพิ่มเข้ามาจากฐานข้อมูล
+                                    */
                                     while ($lshomework= mysqli_fetch_array($result, MYSQLI_NUM)){
                                         echo "
                                         <div class='row hwbox'>
@@ -123,8 +137,10 @@
     </div>
 
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<!-- Modal
+    เป็นหน้าต่างที่จะเเสดงขึ้นมาเพิ่อที่จะเพิ่มข้อมูลไปใส่ไว้บนหน้า home
+ -->
+<div class="modal fade" id="homeworkmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -155,7 +171,7 @@
       </form>
     </div>
   </div>
-    <!--Javascript-->
+    <!--Javascript Bootstrap-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

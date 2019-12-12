@@ -17,7 +17,9 @@
 
 <body>
 
-    <!--Header-->
+    <!--Header
+        ส่วน bar ที่อยู่ส้วนหัวของเว็ปไซต์ 
+    -->
     <div class="container-fluid">
         <div class="row" id="header">
             <div class="col-3 bc">
@@ -43,7 +45,10 @@
         </div>
     </div>
 
-    <!--Left bar-->
+    <!--
+        Left bar
+        บาร์ทางซ้ายซึ่งจะมีปุ่มอยู่ 5 ปุ่ม
+    -->
     <div class="row page menu">
         <div class="col-2 page">
             <h2>Welcome</h2>
@@ -53,16 +58,23 @@
             ?>
             </div>
             <hr>
+            <!--ปุ่มหน้าหลัก-->
             <a href="\template\main.php" class="inner_left_bar btn btn-secondary menubutton">Home</a>
             <hr>
+            <!--ปุ่ม เเสดงสมาชิกคนในห้อง-->
             <a href="\template\member.php" class="inner_left_bar btn btn-secondary menubutton">สมาชิกในห้องของคุณ</a>
             <hr>
+            <!--ปุ่ม เเสดงตารางสอน-->
             <a href="\template\tarang.php" class="inner_left_bar btn btn-secondary menubutton">ตารางสอนของคุณ</a>
-            <hr>    
-            <button type="button" class="inner_left_bar btn btn-secondary menubutton" data-toggle="modal" data-target="#exampleModalCenter">เพิ่มข้อมูล</button>
             <hr>
-            <button type="button" class="btn btn-secondary menubutton">ติดต่ออาจารย์</button>  
+            <!--ปุ่ม กดเพิ่อเพิ่มข้อมูลต่างๆเช่น การบ้าน ประกาศต่างๆ-->
+            <button type="button" class="inner_left_bar btn btn-secondary menubutton" data-toggle="modal" data-target="#homeworkmodal">เพิ่มข้อมูล</button>
+            <hr>
+            <!--ปุ่ม เเสดงรายชื่อของอาจาร์ย วิชาที่สอน เเละเบอร์โทรศัพท์ด้วย-->
+            <a href="\template\teacher.php"><button type="button" class="btn btn-secondary menubutton">ติดต่ออาจารย์</button></a>
         </div>
+
+        <!--ส่วนของเนื้อหาภายในเว็บไซต์-->
         <div class="col" id="blankp">
             <div class="container contentbox" id="headertop">
             <h1>สมาชิกในห้อง</h1>
@@ -74,6 +86,11 @@
                         <th  scope="col" class="headtable"> เบอร์โทรศัพท์</th>
                     </thead>
                     <?php
+
+                    /*
+                        วนลูปเพิ่มดึงข้อมูลของสมาชิกของนักเรียนภายในห้องจากฐานข้อมูล
+                    */
+
                     require "./getdata.php";
                     if($result){
                         while($record= mysqli_fetch_array($result, MYSQLI_NUM)){
@@ -97,8 +114,10 @@
         </div>
     </div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<!-- Modal
+    เป็นหน้าต่างที่จะเเสดงขึ้นมาเพิ่อที่จะเพิ่มข้อมูลไปใส่ไว้บนหน้า home
+ -->
+ <div class="modal fade" id="homeworkmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -108,31 +127,28 @@
         </button>
       </div>
       <div class="modal-body">
+      <form action="adddata.php" method="post" action="main.php">
         ชื่อวิชา <br>
-        <input class="form-control" type="text" placeholder="วิชา">
-        <label class="mr-sm-2" for="inlineFormCustomSelect">ประเภท</label>
-        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-        <option selected>Choose...</option>
-        <option value="1">ใบความรู้</option>
-        <option value="2">การบ้าน</option>
-      </select>
+        <input class="form-control" type="text" placeholder="วิชา" name="subname">
+        ประเภท <br>
+        <input class="form-control" type="text" placeholder="งานกลุ่ม, ใบงาน, การบ้าน, ใบความรู้" name="type">
         คะเเนน <br>
-        <input class="form-control" type="text" placeholder="คะเเนน">
+        <input class="form-control" type="text" placeholder="คะเเนน" name="score">
         คำอธิบาย <br>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="text"></textarea>
         <div class="form-group">
-        <label for="exampleFormControlFile1">ไฟล์งาน</label>
-        <input type="file" class="form-control-file" id="exampleFormControlFile1">
-  </div>
+        <label for="exampleFormControlFile1" name="file">ลิ้งค์เพิ่มเติม</label>
+        <input class="form-control" type="text" placeholder="ลิ้งค์ไฟล์ หรือ เเหล่งอ้างอิงอื่นๆ" name="reference">
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-        <button type="button" class="btn btn-primary">เพิ่มการบ้าน</button>
+        <button type="submit" class="btn btn-primary">เพิ่มการบ้าน</button>
       </div>
+      </form>
     </div>
   </div>
-
-    <!--Javascript-->
+    <!--Javascript Bootstrap-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

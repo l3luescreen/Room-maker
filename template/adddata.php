@@ -1,4 +1,7 @@
 <?php
+		/*
+                เป็นการเชื่อมต่อกับฐานข้อมูลเเละดึงข้อมูลจากฐานข้อมูลการบ้าน
+        */
 $con= mysqli_connect("localhost","root","","homework") or die("Error: " . mysqli_error($con));
 
 mysqli_query($con, "SET NAMES 'utf8' ");
@@ -35,3 +38,18 @@ mysqli_query($con, "SET NAMES 'utf8' ");
 	echo "</script>";
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<div class="container">
+		<img src="https://cdn130.picsart.com/266624643028212.png?r240x240" alt="" class="correct">
+	</div>
+</body>
+</html>

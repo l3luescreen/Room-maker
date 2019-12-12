@@ -76,23 +76,41 @@
 
         <!--ส่วนของเนื้อหาภายในเว็บไซต์
         
-            ในตรงนี้เป็นการเเสดงตารางสอนของนักเรียนคนคนนั้นมาเเสดง
+            ในตรงนี้เป็นการเเสดงข้อมูลของอาจาร์ย
         -->
         <div class="col" id="blankp">
             <div class="container contentbox" id="headertop">
-                <div class="col">
-                   <h1>ตารางสอน</h1>
-                </div>
-                <div class="col">
-                    <img src="http://www.lks.ac.th/file/images/3927490a42721e2bce30dfb9c6431f7d.jpg" alt="">
-                </div>
+            <h1>อาจารย์</h1>
+            <table class="table">
+                    <thead>
+                        <th  scope="col" class="headtable"> ชื่อ</th>
+                        <th  scope="col" class="headtable"> นามสกุล</th>
+                        <th  scope="col" class="headtable"> วิชาที่สอน</th>
+                        <th  scope="col" class="headtable"> เบอร์โทรศัพท์</th>
+                    </thead>
+                    <?php
+                    require "./getdata.php";
+                    if($resultteacher){
+                        while($recordteacher= mysqli_fetch_array($resultteacher, MYSQLI_NUM)){
+                            echo "
+                            <tbody>
+                            <th>$recordteacher[0]</th>
+                            <th>$recordteacher[1]</th>
+                            <th>$recordteacher[2]</th>
+                            <th>$recordteacher[3]</th>
+                            </tbody>";
+                        }
+                    }else{
+                        echo "ERROR!";
+                    }    
+                    ?>
+                </table>
             </div>
             <div class="container contentbox bc" id="headerbot">
                 <h1>Welcome to Classroom management</h1>
             </div>
         </div>
     </div>
-
 
 <!-- Modal
     เป็นหน้าต่างที่จะเเสดงขึ้นมาเพิ่อที่จะเพิ่มข้อมูลไปใส่ไว้บนหน้า home

@@ -122,3 +122,7 @@ th{
 .space{
     margin: 10px;
 }
+
+.correct{
+    align-content: center;
+}
