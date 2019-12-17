@@ -20,8 +20,4 @@
 | 3. 	| PHP   	|
 | 4. 	| Mysql 	|
 
-<video controls="controls">
-  <source type="video/mp4" src="filename.mp4"></source>
-  <source type="video/webm" src="filename.webm"></source>
-  <p>Your browser does not support the video element.</p>
-</video>
+[Link to video](https://www.youtube.com/watch?v=yavtOgXfKqA&feature=youtu.be&fbclid=IwAR2vpSFUtAJDHfm4-pCq3nWjmBZe4qWjjAyFsgrYMz32er4inl0ftlsPg7Q)
