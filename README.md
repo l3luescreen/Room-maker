@@ -19,3 +19,9 @@
 | 2. 	| CSS   	|
 | 3. 	| PHP   	|
 | 4. 	| Mysql 	|
+
+<video controls="controls">
+  <source type="video/mp4" src="filename.mp4"></source>
+  <source type="video/webm" src="filename.webm"></source>
+  <p>Your browser does not support the video element.</p>
+</video>
