@@ -35,7 +35,7 @@ CREATE TABLE `users` (
   `pwdUsers` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
+---
 -- Dumping data for table `users`
 --
 
