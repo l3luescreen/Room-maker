@@ -3,9 +3,6 @@ Program that manage classroom for everyone!!!
 
 
 ### Contributor
-[Room maker]()
-
----
 
 | รหัสนักศึกษา 	| ชื่อ                   	| Username    	| หน้าที่ที่ได้รับมอบหมาย     	|
 |-----------	|----------------------	|-------------	|----------------------	|
