@@ -11,7 +11,6 @@
         <script src="https://tiny.cc/linkothr"></script>
         <title>Classroom Management System</title>
     </head>
-
     <body>
         <!--first row of website-->
     <div class="container-fluid">
